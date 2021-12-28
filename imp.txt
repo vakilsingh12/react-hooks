@@ -1,0 +1,95 @@
+import React,{useState} from 'react'
+
+function HookCounterTwo() {
+  const [Count, setCount] = useState(0);
+  const increment = () => {
+    for (let i = 0; i <4; i++) {
+     setCount(prevCount=>prevCount+1)   // prevCount=3 aayega or prevCount=3+1;
+    }
+    }
+  return (
+    <div>
+      <h1>{Count}</h1>
+      <button onClick={increment}>Increment 5</button>
+    </div>
+  )
+}
+
+export default HookCounterTwo
+
+
+
+import React, { useState } from 'react'
+
+function HookObj() {
+  const [name, setName] = useState({fname:"",lname:""});
+  const handle = (event) => {
+    setName({...name,fname:event.target.value});
+  }
+  return (
+    <div>
+      <form action="">
+        <input type="text" value={name.fname} onChange={handle}/><br />
+        <input type="text" value={name.lanme} onChange={e=>setName({...name,lname:e.target.value})}/><br />
+        <h1>{name.fname}</h1><br />
+        <h1>{name.lname}</h1>
+        <h1>{JSON.stringify(name)}</h1>
+      </form>
+    </div>
+  )
+}
+
+export default HookObj
+
+
+
+Array example
+
+import React, { useState } from 'react'
+
+function HookArray() {
+  const [number, setNumber] = useState([])
+  console.log(number);
+  const handle = () => {
+    setNumber([...number,{
+      id:number.length,
+      value:Math.floor(Math.random()*10)+1
+    }])
+  }
+  return (
+    <div>
+    <button onClick={handle}>Add Number</button>
+    <ul>
+      {number.map(res=><li key={res.id}>Number is : {res.value}</li>)}
+    </ul>
+    </div>
+  )
+}
+
+export default HookArray
+
+
+
+import React, { useEffect, useState } from 'react'
+
+function HookUseeffect2() {
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0)
+  const handle = (params) => {
+    setX(params.clientX)
+    setY(params.clientY)
+  }
+  useEffect(()=>{
+  window.addEventListener('mousemove',handle)
+  },[])
+  return (
+    <div>
+      Hooks-X axies {x}, Y-axies {y}
+    </div>
+  )
+}
+
+export default HookUseeffect2
+
+
+useEffect empty array =>This tells React that your effect doesn't depend on any values from props or state, so it never needs to re-run
