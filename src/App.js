@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
-import RefHooks from './UseRef/RefHooks'
+import React from 'react'
+import ClassTimer from './UseRef/ClassTimer'
+import HookCounter from './UseRef/HookCounter'
 
 function App() {
-  useEffect(()=>{
-
-  },)
   return (
     <div className='app'>
-     <RefHooks/>
+     <ClassTimer/>
+     <HookCounter/>
     </div>
   )
 }
