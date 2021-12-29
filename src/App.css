@@ -3,3 +3,13 @@
   justify-content: center;
  
 }
+button{
+  padding: 5px 15px;
+  background-color: blueviolet;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+  box-shadow: 5px 5px 8px #000;
+  cursor: pointer;
+  margin-right: 15px;
+}

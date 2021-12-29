@@ -1,12 +1,12 @@
 import React from 'react'
-import ClassTimer from './UseRef/ClassTimer'
-import HookCounter from './UseRef/HookCounter'
+import CounterOne from './CounterCustomHook/CounterOne'
+import CounterTwo from './CounterCustomHook/CounterTwo'
 
 function App() {
   return (
-    <div className='app'>
-     <ClassTimer/>
-     <HookCounter/>
+    <div>
+      <CounterOne/>
+      <CounterTwo/>
     </div>
   )
 }
